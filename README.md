@@ -8,7 +8,7 @@ Based on [dockernotebook](https://github.com/rissem/dockernotebook) project
 
 Build:
 
-    docker build -t jem:latest .
+    sudo docker build -t jem:latest .
 
 Run:
 
