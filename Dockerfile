@@ -1,15 +1,20 @@
 FROM ubuntu:latest
-Maintainer Matt Klich, Mike Risse
+Maintainer Paco Nathan
 
-# Build: docker build -t docker-ipython-notebook:latest .
-# Run:   docker run -d -P docker-ipython-notebook:latest
+# Build: docker build -t jem:latest .
+# Run:   docker run -d -P jem:latest
 
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
     git wget build-essential python-dev ipython ipython-notebook python-pip \
-    python-numpy python-scipy python-matplotlib python-pandas python-sympy \
-    python-nose python-sklearn libsndfile-dev; \
-  pip install scikits.audiolab
+    libatlas-base-dev gfortran gcc-multilib glpk python-glpk \
+    python-numpy python-scipy python-matplotlib python-pandas python-sympy; \
+  pip install scipy; \
+  pip install neurolab; \
+  pip install hyperloglog; \
+  pip install pybloom; \
+
+#  pip install countminsketch # or build from GitHub repo
 
 ADD ./notebook/ /tmp/notebook/
 
