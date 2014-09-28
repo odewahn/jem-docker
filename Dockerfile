@@ -8,11 +8,9 @@ ENV PATH /root/anaconda/bin:$PATH
 
 CMD ["/sbin/my_init" , "--","bash", "-l"]
 
-# unfortunately, skip apt-get for (gplk, python-glpk) since "trusty" lacks it
-
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
-    git libatlas-base-dev gfortran gcc-multilib; \
+    git libatlas-base-dev gfortran gcc-multilib libglpk-dev python-glpk; \
   conda update conda; \
   conda update ipython; \
   conda update matplotlib; \
