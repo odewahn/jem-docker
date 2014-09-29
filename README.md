@@ -3,17 +3,19 @@ jem-docker
 
 Docker + IPython Notebook for [Just Enough Math](http://justenoughmath.com)
 
+See also [Docker registry](https://registry.hub.docker.com/u/ceteri/jem/)
+
 Lifecycle
 ---------
 
 Provision:
 
 Follow the steps to [launch Docker](https://docs.docker.com/installation/amazon/)
-on a EC2 node on AWS (at least an `m3.medium`) then:
+on a EC2 node on AWS (at least an `m3.medium` with +16 GB storage) then:
 
-    sudo apt-get update
-    sudo apt-get install lynx git emacs
+    sudo apt-get update ; sudo apt-get install -y lynx git emacs
     git clone https://github.com/ceteri/jem-docker.git
+    cd jem-docker
 
 Build:
 

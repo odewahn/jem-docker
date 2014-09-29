@@ -1,7 +1,7 @@
 FROM phusion/baseimage:latest
 MAINTAINER Paco Nathan "http://liber118.com/pxn/"
 
-ADD src/ /tmp
+ADD src/install.sh /tmp
 RUN /tmp/install.sh
 
 ENV PATH /root/anaconda/bin:$PATH 
