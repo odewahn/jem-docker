@@ -1,10 +1,11 @@
 FROM phusion/baseimage:latest
 MAINTAINER Paco Nathan "http://liber118.com/pxn/"
 
-ADD src/install.sh /tmp
+ADD src/ /tmp
 RUN /tmp/install.sh
 
 ENV PATH /root/anaconda/bin:$PATH 
+ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 CMD ["/sbin/my_init" , "--","bash", "-l"]
 
@@ -19,8 +20,6 @@ RUN apt-get update; \
   pip install hyperloglog; \
   pip install pybloom; \
   pip install git+https://github.com/rafacarrascosa/countminsketch
-
-ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 EXPOSE 8080
 
