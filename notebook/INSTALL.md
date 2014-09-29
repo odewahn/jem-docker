@@ -53,4 +53,8 @@ edit Vagrantfile
 vagrant box add jem package.box virtualbox
 vagrant up
 vagrant ssh
-cd jemnbserverOpen a browser window at:http://localhost:8888
+cd jem
+nbserver
+
+Open a browser window at:
+http://localhost:8888
