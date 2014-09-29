@@ -9,7 +9,7 @@ Lifecycle
 Provision:
 
 Follow the steps to [launch Docker](https://docs.docker.com/installation/amazon/)
-on an `m3.medium` EC2 node on AWS, then:
+on a EC2 node on AWS (at least an `m3.medium`) then:
 
     sudo apt-get update
     sudo apt-get install lynx git emacs
@@ -39,7 +39,7 @@ This is based on:
   * [docker-anaconda](https://github.com/opentable/docker-anaconda) by Pablo Delgado @ OpenTable
   * [dockernotebook](https://github.com/rissem/dockernotebook) by Matt Klich, Mike Risse
   * [Clean Up After Docker](http://blog.stefanxo.com/2014/02/clean-up-after-docker/) by StefanXO
-
+  * much appreciated advice+moral support from [@AlTobey](https://twitter.com/AlTobey)
 
 ---
 
