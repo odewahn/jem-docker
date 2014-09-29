@@ -15,7 +15,6 @@ on a EC2 node on AWS (at least an `m3.medium`) then:
     sudo apt-get install lynx git emacs
     git clone https://github.com/ceteri/jem-docker.git
 
-
 Build:
 
     sudo docker build --force-rm=true -t jem:latest .
@@ -23,6 +22,10 @@ Build:
 Run:
 
     sudo docker run -d -p 8080:8080 jem:latest
+
+Troubleshoot:
+
+    sudo docker run -it jem:latest /bin/bash
 
 Clean:
 
