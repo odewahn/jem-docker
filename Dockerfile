@@ -1,5 +1,5 @@
 FROM phusion/baseimage:latest
-Maintainer Paco Nathan
+MAINTAINER Paco Nathan "http://liber118.com/pxn/"
 
 ADD src/ /tmp
 RUN /tmp/install.sh
@@ -10,7 +10,7 @@ CMD ["/sbin/my_init" , "--","bash", "-l"]
 
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
-    git libatlas-base-dev gfortran gcc-multilib libglpk-dev; \
+    git libglpk-dev; \
   conda update conda; \
   conda update ipython; \
   conda update matplotlib; \
