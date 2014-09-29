@@ -10,10 +10,11 @@ CMD ["/sbin/my_init" , "--","bash", "-l"]
 
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
-    git libatlas-base-dev gfortran gcc-multilib libglpk-dev python-glpk; \
+    git libatlas-base-dev gfortran gcc-multilib libglpk-dev; \
   conda update conda; \
   conda update ipython; \
   conda update matplotlib; \
+  pip install glpk; \
   pip install neurolab; \
   pip install hyperloglog; \
   pip install pybloom; \
