@@ -21,8 +21,7 @@ RUN apt-get update; \
   pip install pybloom; \
   pip install git+https://github.com/rafacarrascosa/countminsketch
 
-EXPOSE 8080
+EXPOSE 8888
 
 ADD notebook/ /tmp/notebook/
-ADD src/run.sh /run.sh
-CMD /run.sh
+WORKDIR /tmp/notebook/
