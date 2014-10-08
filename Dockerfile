@@ -25,5 +25,13 @@ RUN apt-get install -Y libsm6 libxrender1 libfontconfig1 libXext6
 
 EXPOSE 8888
 
+
+USER atlas
+ENV HOME /home/atlas
+ENV SHELL /bin/bash
+ENV USER atlas
+
 ADD notebook/ /tmp/notebook/
 WORKDIR /tmp/notebook/
+
+RUN find . -name '*.ipynb' -exec ipython trust {} \;
