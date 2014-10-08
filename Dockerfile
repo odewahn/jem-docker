@@ -21,17 +21,22 @@ RUN apt-get update; \
   pip install pybloom; \
   pip install git+https://github.com/rafacarrascosa/countminsketch
 
-RUN apt-get install -Y libsm6 libxrender1 libfontconfig1 libXext6
+RUN apt-get install -y libsm6 libxrender1 libfontconfig1 libXext6
 
 EXPOSE 8888
 
+
+
+ADD notebook/ /tmp/notebook/
+WORKDIR /tmp/notebook/
+
+RUN useradd -m -s /bin/bash atlas
+RUN find . -name '*.ipynb' -exec ipython trust {} \;
+
+RUN chown -R atlas:atlas /tmp/notebook
 
 USER atlas
 ENV HOME /home/atlas
 ENV SHELL /bin/bash
 ENV USER atlas
 
-ADD notebook/ /tmp/notebook/
-WORKDIR /tmp/notebook/
-
-RUN find . -name '*.ipynb' -exec ipython trust {} \;
