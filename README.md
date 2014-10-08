@@ -23,7 +23,7 @@ Build:
 
 Run:
 
-    sudo docker run -d -p 8080:8080 jem:latest
+    sudo docker run -d -p 8888:8888 jem:latest
 
 Troubleshoot:
 
