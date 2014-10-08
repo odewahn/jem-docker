@@ -11,7 +11,7 @@ CMD ["/sbin/my_init" , "--","bash", "-l"]
 
 RUN apt-get update; \
   DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends install --yes \
-    git libglpk-dev; \
+  git libglpk-dev; \
   conda update conda; \
   conda update ipython; \
   conda update matplotlib; \
@@ -20,6 +20,8 @@ RUN apt-get update; \
   pip install hyperloglog; \
   pip install pybloom; \
   pip install git+https://github.com/rafacarrascosa/countminsketch
+
+RUN apt-get install -Y libsm6 libxrender1 libfontconfig1 libXext6
 
 EXPOSE 8888
 
