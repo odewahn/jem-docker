@@ -30,13 +30,5 @@ EXPOSE 8888
 ADD notebook/ /tmp/notebook/
 WORKDIR /tmp/notebook/
 
-RUN useradd -m -s /bin/bash atlas
 RUN find . -name '*.ipynb' -exec ipython trust {} \;
-
-RUN chown -R atlas:atlas /tmp/notebook
-
-USER atlas
-ENV HOME /home/atlas
-ENV SHELL /bin/bash
-ENV USER atlas
 
