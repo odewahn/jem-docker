@@ -1,0 +1,7 @@
+web:
+  build: .
+  command: /bin/bash -c -l 'ipython notebook --ip=0.0.0.0 --no-browser'
+  volumes:
+    - .:/usr/src:rw
+  ports:
+    - "8888:8888"
