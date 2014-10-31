@@ -19,3 +19,5 @@ RUN apt-get install -y libsm6 libxrender1 libfontconfig1 libXext6
 EXPOSE 8888
 
 WORKDIR /usr/src/notebook
+
+CMD ipython2 notebook --ip=0.0.0.0 --no-browser
